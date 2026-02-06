@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from 'next-intl';
+import Image from "next/image";
 
 interface HeaderProps {
   referralCode: string;
@@ -13,7 +13,7 @@ export default function Header({ referralCode, onCopyCode, onDownloadApp }: Head
   const t = useTranslations();
 
   return (
-    <header className="p-4 md:p-6 w-full flex items-center gap-2 md:gap-4 bg-[#FFFFFFAB] shadow-[0px_6px_23.5px_0px_#00000026] backdrop-blur-md rounded-b-xl bg-[url('/bg-header.png')] bg-size-[100%_100%] bg-no-repeat">
+    <header className="p-4 md:p-6 w-full flex items-center gap-2 md:gap-4 bg-[#FFFFFFAB] shadow-[0px_6px_23.5px_0px_#00000026] backdrop-blur-md rounded-b-xl bg-[url('/bg-header.png')] bg-size-[100%_100%] bg-no-repeat z-99">
       <div className="p-2">
         <Image src="/logo.png" alt="logo" width={1000} height={1000} className="size-[43px] md:size-[56px] object-contain shrink-0" />
       </div>

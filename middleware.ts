@@ -8,9 +8,9 @@ export default createMiddleware({
   // Used when no locale matches
   defaultLocale: routing.defaultLocale,
 
-  // Chỉ hiển thị prefix cho các locale không phải default (vi)
-  // Tiếng Việt sẽ không có /vi/ trong URL
-  localePrefix: 'as-needed',
+  // Luôn hiển thị prefix cho TẤT CẢ locale (bao gồm cả default: vi)
+  // Ví dụ: /vi, /en, /ko, /zh, /th
+  localePrefix: 'always',
 
   // Tắt tự động nhận dạng ngôn ngữ
   localeDetection: false,

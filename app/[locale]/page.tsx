@@ -9,6 +9,7 @@ import BenefitsSection from '@/components/sections/BenefitsSection';
 import VideoReviewSection from '@/components/sections/VideoReviewSection';
 import CTASection from '@/components/sections/CTASection';
 import ReviewsSection from '@/components/sections/ReviewsSection';
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Home() {
   const t = useTranslations();
@@ -19,6 +20,9 @@ export default function Home() {
     af_sub1: "29VD72",
     campaign: "referral",
   });
+
+  // Thông tin liên hệ lấy từ API get_info
+  const [contactInfo, setContactInfo] = useState<any | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -31,8 +35,28 @@ export default function Home() {
     }
   }, []);
 
+  // Gọi API get_info (GET)
+  useEffect(() => {
+    const fetchContactInfo = async () => {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_ADMIN_API_URL}/get_info`);
+        if (!res.ok) {
+          throw new Error(`Request failed with status ${res.status}`);
+        }
+        const data = await res.json();
+        setContactInfo(data);
+        // console.log("Contact info:", data);
+      } catch (error) {
+        console.error("Failed to fetch contact info", error);
+      }
+    };
+
+    fetchContactInfo();
+  }, []);
+
   // Link OneLink mặc định
-  const onelinkBaseUrl = "https://m4u.onelink.me/C4Tg/bm2r4msg";
+  // const onelinkBaseUrl = "https://m4u.onelink.me/C4Tg/bm2r4msg";
+  const onelinkBaseUrl = contactInfo?.short_link_referral;
 
   // Hàm xử lý khi bấm nút "Tải app ngay"
   const handleDownloadApp = useCallback(() => {
@@ -64,6 +88,7 @@ export default function Home() {
         onDownloadApp={handleDownloadApp}
       />
       <main className="flex flex-col gap-6 md:gap-8 w-full pb-6 max-w-7xl mx-auto">
+        <LanguageSwitcher />
         <VideoSection />
         <BenefitsSection />
         <VideoReviewSection />

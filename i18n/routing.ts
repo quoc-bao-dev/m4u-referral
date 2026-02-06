@@ -3,10 +3,13 @@ import { createNavigation } from 'next-intl/navigation';
 
 export const routing = defineRouting({
   // A list of all locales that are supported
-  locales: ['vi', 'en', 'ko', 'zh', 'th'],
+  locales: ['vi', 'en', 'kr', 'cn', 'th'],
 
   // Used when no locale matches
-  defaultLocale: 'vi'
+  defaultLocale: 'vi',
+
+  // Luôn hiển thị prefix cho TẤT CẢ locale (bao gồm cả default: vi)
+  localePrefix: 'always'
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

@@ -59,7 +59,7 @@ export default function VideoSection() {
           </div>
         </div>
         <div className="absolute bottom-[-10%] -right-2 md:-right-4 lg:-right-6">
-          <Image src="/coins.png" alt="bg-section1" width={1000} height={1000} className="w-full max-w-[120px] md:max-w-[160px] lg:max-w-[200px] object-cover" />
+          <Image src="/coins1.png" alt="bg-section1" width={1000} height={1000} className="w-full max-w-[120px] md:max-w-[160px] lg:max-w-[200px] object-cover" />
         </div>
       </div>
     </section>
