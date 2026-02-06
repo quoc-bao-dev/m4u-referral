@@ -57,7 +57,7 @@ export default function Home() {
   }, [urlParams.af_sub1, t]);
 
   return (
-    <div className="flex flex-col gap-4 min-h-screen bg-[#F5F5F5] font-sans">
+    <div className="flex flex-col gap-4 min-h-screen overflow-x-hidden bg-[#F5F5F5] font-sans">
       <Header
         referralCode={urlParams.af_sub1}
         onCopyCode={handleCopyCode}

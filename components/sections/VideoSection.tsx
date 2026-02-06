@@ -50,7 +50,7 @@ export default function VideoSection() {
             </button>
           </div>
 
-          <div className="px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-5 flex flex-col gap-3 md:gap-4 mr-[14%] md:mr-[18%]">
+          <div className="px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-5 flex flex-col gap-3 md:gap-4 mr-[20%]">
             <div className="flex items-center gap-1 md:gap-2">
               <Image src="/video.svg" alt="play" width={1000} height={1000} className="size-[18px] md:size-5 lg:size-6 object-contain" />
               <h2 className="text-base md:text-xl lg:text-2xl font-bold text-[#171717]">{t('section1.title')}</h2>
