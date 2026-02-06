@@ -118,7 +118,7 @@ export default function LanguageSwitcher() {
         <ul
           role="listbox"
           className="absolute right-0 top-full w-28 overflow-hidden rounded-lg border border-[#D8DAE5] bg-white shadow-lg z-999"
-        >
+        > 
           {routing.locales.map((l) => {
             const label = LOCALE_LABELS[l] ?? l.toUpperCase();
             const isActive = l === locale;
