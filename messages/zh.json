@@ -1,0 +1,48 @@
+{
+  "header": {
+    "title": "立即下载应用，获得30%折扣券",
+    "referralCode": "推荐代码",
+    "downloadButton": "立即下载应用",
+    "copySuccess": "推荐代码已复制！",
+    "copyError": "无法复制推荐代码！"
+  },
+  "section1": {
+    "title": "M4U是什么？",
+    "description": "评论平台 - 赚取奖励 - 为社区做贡献\n"
+  },
+  "section2": {
+    "title": "立即加入，好处就在眼前！",
+    "subtitle": "简单的合作流程，帮助您将对美容的热情转化为收入。",
+    "step1": {
+      "title": "试用产品",
+      "description": "注册试用 - 最高80%奖励"
+    },
+    "step2": {
+      "title": "评论获得奖励",
+      "description": "注册试用 - 最高80%奖励"
+    },
+    "step3": {
+      "title": "分享产品",
+      "description": "分享产品 - 获得30% Haru积分"
+    },
+    "step4": {
+      "title": "推荐朋友",
+      "description": "推荐立即获得5% Haru积分"
+    }
+  },
+  "section3": {
+    "title": "视频评论",
+    "subtitle": "来自体验过的用户社区最真实的评论视频和图片。",
+    "participation": "参与",
+    "register": "注册试用"
+  },
+  "section4": {
+    "title": "立即下载应用，获得\n 30%折扣券",
+    "referralCode": "推荐代码："
+  },
+  "section5": {
+    "title": "用户对产品的评价",
+    "subtitle": "写评论立即获得优惠"
+  }
+}
+

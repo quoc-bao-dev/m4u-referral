@@ -1,0 +1,48 @@
+{
+  "header": {
+    "title": "지금 앱을 다운로드하고 30% 할인 쿠폰 받기",
+    "referralCode": "추천 코드",
+    "downloadButton": "지금 앱 다운로드",
+    "copySuccess": "추천 코드가 복사되었습니다!",
+    "copyError": "추천 코드 복사에 실패했습니다!"
+  },
+  "section1": {
+    "title": "M4U란 무엇인가요?",
+    "description": "리뷰 플랫폼 - 보상 획득 - 커뮤니티에 기여\n"
+  },
+  "section2": {
+    "title": "지금 참여하고 혜택을 받으세요!",
+    "subtitle": "간단한 협업 프로세스로 뷰티에 대한 열정을 수입으로 전환할 수 있습니다.",
+    "step1": {
+      "title": "제품 체험",
+      "description": "체험 등록 - 최대 80% 보상"
+    },
+    "step2": {
+      "title": "리뷰 작성하고 보상 받기",
+      "description": "체험 등록 - 최대 80% 보상"
+    },
+    "step3": {
+      "title": "제품 공유",
+      "description": "제품 공유 - 하루 포인트 30% 획득"
+    },
+    "step4": {
+      "title": "친구 추천",
+      "description": "추천하고 즉시 하루 포인트 5% 획득"
+    }
+  },
+  "section3": {
+    "title": "비디오 리뷰",
+    "subtitle": "체험한 사용자 커뮤니티의 가장 진정성 있는 리뷰 비디오와 이미지.",
+    "participation": "참여",
+    "register": "체험 등록"
+  },
+  "section4": {
+    "title": "지금 앱을 다운로드하고\n 30% 할인 쿠폰 받기",
+    "referralCode": "추천 코드:"
+  },
+  "section5": {
+    "title": "사용자들이 제품에 대해 말하는 것",
+    "subtitle": "리뷰를 작성하고 즉시 혜택을 받으세요"
+  }
+}
+

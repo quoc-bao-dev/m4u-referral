@@ -1,0 +1,48 @@
+{
+  "header": {
+    "title": "Download app now to get 30% off voucher",
+    "referralCode": "Referral code",
+    "downloadButton": "Download app now",
+    "copySuccess": "Referral code copied!",
+    "copyError": "Failed to copy referral code!"
+  },
+  "section1": {
+    "title": "What is M4U?",
+    "description": "Review platform - earn rewards - contribute to\n community"
+  },
+  "section2": {
+    "title": "Join now, benefits at hand!",
+    "subtitle": "Simple collaboration process, helping you turn your passion for beauty into income.",
+    "step1": {
+      "title": "Try products",
+      "description": "Register for trial - Up to 80% reward"
+    },
+    "step2": {
+      "title": "Review and earn rewards",
+      "description": "Register for trial - Up to 80% reward"
+    },
+    "step3": {
+      "title": "Share products",
+      "description": "Share products - Get 30% Haru points"
+    },
+    "step4": {
+      "title": "Refer friends",
+      "description": "Refer and get 5% Haru points immediately"
+    }
+  },
+  "section3": {
+    "title": "Video Review",
+    "subtitle": "The most authentic review videos and images from the community of users who have experienced.",
+    "participation": "participation",
+    "register": "Register for trial"
+  },
+  "section4": {
+    "title": "Download app now to get\n 30% off voucher",
+    "referralCode": "Referral code:"
+  },
+  "section5": {
+    "title": "What users say about products",
+    "subtitle": "Write a review and get offers immediately"
+  }
+}
+

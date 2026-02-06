@@ -1,0 +1,48 @@
+{
+  "header": {
+    "title": "Tải app ngay để nhận voucher giảm 30%",
+    "referralCode": "Mã giới thiệu",
+    "downloadButton": "Tải app ngay",
+    "copySuccess": "Đã copy mã giới thiệu!",
+    "copyError": "Không thể copy mã giới thiệu!"
+  },
+  "section1": {
+    "title": "M4U là gì?",
+    "description": "Nền tảng review - kiếm thưởng - đóng góp\n cộng đồng"
+  },
+  "section2": {
+    "title": "Tham gia ngay, lợi ích liền tay!",
+    "subtitle": "Quy trình hợp tác đơn giản, giúp bạn biến đam mê làm đẹp thành thu nhập.",
+    "step1": {
+      "title": "Dùng thử sản phẩm",
+      "description": "Đăng ký dùng thử - Thưởng tối đa 80%"
+    },
+    "step2": {
+      "title": "Đánh giá nhận thưởng",
+      "description": "Đăng ký dùng thử - Thưởng tối đa 80%"
+    },
+    "step3": {
+      "title": "Chia sẻ sản phẩm",
+      "description": "Chia sẻ sản phẩm - Nhận 30% Haru xu"
+    },
+    "step4": {
+      "title": "Giới thiệu bạn bè",
+      "description": "Giới thiệu nhận ngay 5% Haru xu"
+    }
+  },
+  "section3": {
+    "title": "Video Review",
+    "subtitle": "Những video và hình ảnh đánh giá chân thật nhất từ cộng đồng người dùng đã trải nghiệm.",
+    "participation": "tham gia",
+    "register": "Đăng ký dùng thử"
+  },
+  "section4": {
+    "title": "Tải app ngay để nhận\n voucher giảm 30%",
+    "referralCode": "Mã giới thiệu:"
+  },
+  "section5": {
+    "title": "Người dùng nói gì về sản phẩm",
+    "subtitle": "Viết review nhận ngay ưu đãi"
+  }
+}
+

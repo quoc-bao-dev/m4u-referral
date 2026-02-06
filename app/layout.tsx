@@ -18,9 +18,12 @@ const siteUrl =
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ??
   "http://localhost:3000";
 
-const appName = "Mask For You - Referral";
+const appName = "M4U - Cộng đồng làm đẹp, thưởngg cực đã";
 const description =
-  "Trang giới thiệu/referral: nhận mã giới thiệu và tải Mask For You - M4U.";
+  "Trải nghiệm - chia sẻ - nhận thưởng: video review & giới thiệu bạn bè";
+
+// Tạo absolute URL cho thumbnail
+const thumbnailUrl = `${siteUrl}/thumbnail.jpeg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -55,14 +58,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "/",
+    url: siteUrl,
     title: appName,
     description,
     siteName: appName,
     locale: "vi_VN",
     images: [
       {
-        url: "/thumbnail.png",
+        url: thumbnailUrl,
         width: 1200,
         height: 630,
         alt: appName,
@@ -73,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: appName,
     description,
-    images: ["/thumbnail.png"],
+    images: [thumbnailUrl],
   },
   appleWebApp: {
     capable: true,
@@ -88,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
+    <html>
       <body
         className={`${baloo.variable} ${tikTokSans.variable} antialiased`}
       >
