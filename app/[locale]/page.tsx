@@ -60,9 +60,15 @@ export default function Home() {
 
   // Hàm xử lý khi bấm nút "Tải app ngay"
   const handleDownloadApp = useCallback(() => {
+    if (!onelinkBaseUrl) {
+      console.warn("short_link_referral chưa sẵn sàng, không thể mở link tải app");
+      return;
+    }
+
     const onelinkUrl = `${onelinkBaseUrl}?pid=${urlParams.pid}&af_sub1=${urlParams.af_sub1}&campaign=${urlParams.campaign}`;
+    console.log(onelinkUrl);
     window.open(onelinkUrl, "_blank");
-  }, [urlParams]);
+  }, [urlParams, onelinkBaseUrl]);
 
   // Hàm copy mã giới thiệu
   const handleCopyCode = useCallback(() => {
