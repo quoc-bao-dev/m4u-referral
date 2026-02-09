@@ -115,6 +115,7 @@ export default function Home() {
         <CTASection
           referralCode={urlParams.af_sub1}
           onCopyCode={handleCopyCode}
+          onDownloadApp={handleDownloadApp}
         />
         <ReviewsSection />
       </main>
