@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'accounts.maskforyou.vn',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

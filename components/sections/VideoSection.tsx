@@ -49,7 +49,7 @@ export default function VideoSection() {
             )}
 
             {/* Nút Play/Pause absolute trên hình */}
-            {isVideoAvailable && (
+            {isVideoAvailable && !isPlaying && (
               <button
                 onClick={handleTogglePlayPause}
                 className="cursor-pointer absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-3 md:p-4 lg:p-5 shadow-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95"
@@ -57,14 +57,15 @@ export default function VideoSection() {
               >
                 {isPlaying ? (
                   // Pause icon
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white"
-                  >
-                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                  </svg>
+                  // <svg
+                  //   xmlns="http://www.w3.org/2000/svg"
+                  //   viewBox="0 0 24 24"
+                  //   fill="currentColor"
+                  //   className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white"
+                  // >
+                  //   <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+                  // </svg>
+                  null
                 ) : (
                   // Play icon
                   <svg
@@ -104,7 +105,7 @@ export default function VideoSection() {
             alt="bg-section1"
             width={1000}
             height={1000}
-            className="w-full max-w-[120px] md:max-w-[160px] lg:max-w-[200px] object-cover"
+            className="w-full max-w-[110px] md:max-w-[160px] lg:max-w-[160px] object-cover"
           />
         </div>
       </div>
