@@ -41,6 +41,7 @@ export default function ReviewsSection() {
   const loadMoreRef = useRef<HTMLDivElement | null>(null);
   const [expandedIds, setExpandedIds] = useState<number[]>([]);
   const MAX_COLLAPSED_CHARS = 220;
+  const isLoadingMoreRef = useRef(false);
 
   const {
     data,
@@ -60,6 +61,9 @@ export default function ReviewsSection() {
       const newItems = data.data.filter((item) => !existingIds.has(item.id));
       return [...prev, ...newItems];
     });
+
+    // Đã load xong trang hiện tại, cho phép load tiếp
+    isLoadingMoreRef.current = false;
   }, [data]);
 
   const hasMore = data ? data.current_page < data.last_page : false;
@@ -74,14 +78,21 @@ export default function ReviewsSection() {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting && hasMore && !isFetching) {
+        if (
+          entry.isIntersecting &&
+          hasMore &&
+          !isFetching &&
+          !isLoadingMoreRef.current
+        ) {
+          isLoadingMoreRef.current = true;
           setPage((prev) => prev + 1);
         }
       },
       {
         root: null,
-        rootMargin: '0px',
-        threshold: 1.0,
+        // Load sớm hơn một chút trước khi chạm đáy để cảm giác mượt hơn
+        rootMargin: '0px 0px 200px 0px',
+        threshold: 0,
       }
     );
 
