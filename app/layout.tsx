@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Baloo_2, TikTok_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import { QueryProvider } from "./providers/QueryProvider";
 
 const baloo = Baloo_2({
   variable: "--font-baloo",
@@ -95,31 +96,33 @@ export default function RootLayout({
       <body
         className={`${baloo.variable} ${tikTokSans.variable} antialiased`}
       >
-        {children}
-        <Toaster
-          position="top-center"
-          toastOptions={{
-            duration: 2000,
-            style: {
-              background: "#fff",
-              color: "#111827",
-              borderRadius: "8px",
-              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
-            },
-            success: {
-              iconTheme: {
-                primary: "#10b981",
-                secondary: "#fff",
+        <QueryProvider>
+          {children}
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              duration: 2000,
+              style: {
+                background: "#fff",
+                color: "#111827",
+                borderRadius: "8px",
+                boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
               },
-            },
-            error: {
-              iconTheme: {
-                primary: "#ef4444",
-                secondary: "#fff",
+              success: {
+                iconTheme: {
+                  primary: "#10b981",
+                  secondary: "#fff",
+                },
               },
-            },
-          }}
-        />
+              error: {
+                iconTheme: {
+                  primary: "#ef4444",
+                  secondary: "#fff",
+                },
+              },
+            }}
+          />
+        </QueryProvider>
       </body>
     </html>
   );

@@ -10,9 +10,23 @@ import VideoReviewSection from '@/components/sections/VideoReviewSection';
 import CTASection from '@/components/sections/CTASection';
 import ReviewsSection from '@/components/sections/ReviewsSection';
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useHomePage } from '@/hooks/queries';
 
 export default function Home() {
   const t = useTranslations();
+
+  // Gọi API HomePage
+  const { data: homePageData, isLoading: isLoadingHomePage, error: homePageError } = useHomePage();
+
+  // Log dữ liệu từ API HomePage
+  useEffect(() => {
+    if (homePageData) {
+      console.log('HomePage Data:', homePageData);
+    }
+    if (homePageError) {
+      console.error('HomePage Error:', homePageError);
+    }
+  }, [homePageData, homePageError]);
 
   // Lấy các tham số từ URL hoặc sử dụng giá trị mặc định
   const [urlParams, setUrlParams] = useState({
@@ -97,7 +111,7 @@ export default function Home() {
         <LanguageSwitcher />
         <VideoSection />
         <BenefitsSection />
-        <VideoReviewSection />
+        <VideoReviewSection onDownloadApp={handleDownloadApp} />
         <CTASection
           referralCode={urlParams.af_sub1}
           onCopyCode={handleCopyCode}
