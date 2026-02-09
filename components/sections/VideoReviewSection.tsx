@@ -82,6 +82,8 @@ export default function VideoReviewSection({ onDownloadApp }: VideoReviewSection
               {videoReviews.map((review, index) => {
                 const isActive = selectedIndex === index;
                 const participationPercent = Math.min((review.count_join / review.limit_people) * 100, 100);
+                const videoUrl = review.video_review_render || review.video_review;
+                const showVideo = isActive && !!videoUrl;
 
                 return (
                   <div
@@ -99,13 +101,25 @@ export default function VideoReviewSection({ onDownloadApp }: VideoReviewSection
                         transition={{ type: 'spring', stiffness: 140, damping: 18 }}
                         className="overflow-hidden md:block hidden"
                       >
-                        <Image
-                          src={review.small_image_video_review || review.image_product}
-                          alt={review.name}
-                          width={1000}
-                          height={1000}
-                          className="w-full h-full object-cover"
-                        />
+                        {showVideo ? (
+                          <video
+                            src={videoUrl}
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            muted
+                            playsInline
+                            loop
+                            preload="metadata"
+                          />
+                        ) : (
+                          <Image
+                            src={review.small_image_video_review || review.image_product}
+                            alt={review.name}
+                            width={1000}
+                            height={1000}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                       </motion.div>
                       <motion.div
                         animate={{
@@ -114,13 +128,25 @@ export default function VideoReviewSection({ onDownloadApp }: VideoReviewSection
                         transition={{ type: 'spring', stiffness: 140, damping: 18 }}
                         className="overflow-hidden md:hidden"
                       >
-                        <Image
-                          src={review.small_image_video_review || review.image_product}
-                          alt={review.name}
-                          width={1000}
-                          height={1000}
-                          className="w-full h-full object-cover"
-                        />
+                        {showVideo ? (
+                          <video
+                            src={videoUrl}
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            muted
+                            playsInline
+                            loop
+                            preload="metadata"
+                          />
+                        ) : (
+                          <Image
+                            src={review.small_image_video_review || review.image_product}
+                            alt={review.name}
+                            width={1000}
+                            height={1000}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                       </motion.div>
                       <div className="p-3 md:p-4 lg:p-5 flex gap-3 md:gap-4">
                         <div className="shrink-0 flex flex-col items-center justify-center">
