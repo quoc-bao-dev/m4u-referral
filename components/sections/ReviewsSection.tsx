@@ -161,9 +161,9 @@ export default function ReviewsSection() {
                         <h3 className="text-xl md:text-2xl font-extrabold text-[#555CF3]">
                           {review.client.fullname}
                         </h3>
-                        <p className="text-sm md:text-base text-[#6B7280] font-normal">
+                        {/* <p className="text-sm md:text-base text-[#6B7280] font-normal">
                           {review.client.address}
-                        </p>
+                        </p> */}
                         <Image
                           src="/stars.png"
                           alt="star"
