@@ -1,5 +1,6 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import axiosInstance from '@/lib/axios';
+import { useLocale } from 'next-intl';
 
 export interface VideoReferralData {
     video_referral: string;
@@ -19,8 +20,9 @@ export type UseVideoReferralOptions = Omit<
  * API: https://admin.maskforyou.vn/api/ApiGetVideo
  */
 export const useVideoReferral = (options?: UseVideoReferralOptions) => {
+    const locale = useLocale();
     return useQuery<VideoReferralData, Error>({
-        queryKey: ['videoReferral'],
+        queryKey: ['videoReferral', locale],
         queryFn: async () => {
             const response = await axiosInstance.get<VideoReferralData>('/ApiGetVideo');
             return response.data;
