@@ -52,7 +52,7 @@ export default function VideoSection() {
             {isVideoAvailable && (
               <button
                 onClick={handleTogglePlayPause}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-3 md:p-4 lg:p-5 shadow-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95"
+                className="cursor-pointer absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-3 md:p-4 lg:p-5 shadow-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95"
                 aria-label={isPlaying ? "Pause video" : "Play video"}
               >
                 {isPlaying ? (
@@ -90,11 +90,11 @@ export default function VideoSection() {
                 className="size-[18px] md:size-5 lg:size-6 object-contain"
               />
               <h2 className="text-base md:text-xl lg:text-2xl font-bold text-[#171717]">
-                {t("section1.title")}
+                {videoData?.title_thumbnal_referral}
               </h2>
             </div>
             <p className="text-xs md:text-sm lg:text-base text-[#525252] font-medium">
-              {t("section1.description")}
+              {videoData?.content_thumbnal_referral}
             </p>
           </div>
         </div>
