@@ -107,7 +107,7 @@ export default function Home() {
         onCopyCode={handleCopyCode}
         onDownloadApp={handleDownloadApp}
       />
-      <main className="flex flex-col gap-6 md:gap-8 w-full  pb-6 max-w-7xl mx-auto">
+      <main className="flex flex-col  gap-6 md:gap-8 w-full  pb-6 max-w-7xl mx-auto">
         <LanguageSwitcher />
         <VideoSection />
         <BenefitsSection />
