@@ -157,7 +157,7 @@ export default function ReviewsSection() {
                         />
                       ) : (
                         <div
-                          className="flex size-[50px] shrink-0 items-center justify-center rounded-full border-2 border-white text-lg font-bold text-white"
+                          className="flex size-[50px] shrink-0 items-center justify-center rounded-full border-2 border-gray-100 text-lg font-bold text-white"
                           style={{ backgroundColor: 'rgb(236 72 153)' }}
                           aria-hidden
                         >
