@@ -4,29 +4,30 @@ import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 import { useListReview, type ReviewListItem } from '@/hooks/queries';
+import Rating from "@/components/Rating";
 
 const PER_PAGE = 2;
 
 function ReviewsSkeleton() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
+    <div className="grid grid-cols-1 gap-3">
       {Array.from({ length: PER_PAGE }).map((_, index) => (
         <div
           key={index}
-          className="bg-white rounded-xl md:rounded-2xl p-3 md:p-4 lg:p-6 flex flex-col gap-3 md:gap-4 animate-pulse"
+          className="bg-white rounded-xl p-3 flex flex-col gap-3 animate-pulse"
         >
-          <div className="flex gap-3 md:gap-4">
-            <div className="size-[50px] md:size-[60px] lg:size-[70px] rounded-full border-2 border-[#E5E7EB] bg-[#F3F4F6] shrink-0" />
+          <div className="flex gap-3">
+            <div className="size-[50px] rounded-full border-2 border-[#E5E7EB] bg-[#F3F4F6] shrink-0" />
             <div className="flex flex-col gap-1 flex-1">
-              <div className="h-4 md:h-5 w-1/2 bg-[#E5E7EB] rounded" />
-              <div className="h-3 md:h-4 w-1/3 bg-[#E5E7EB] rounded" />
-              <div className="h-4 w-24 md:w-28 lg:w-32 bg-[#E5E7EB] rounded" />
+              <div className="h-4 w-1/2 bg-[#E5E7EB] rounded" />
+              <div className="h-3 w-1/3 bg-[#E5E7EB] rounded" />
+              <div className="h-4 w-24 bg-[#E5E7EB] rounded" />
             </div>
           </div>
           <div className="space-y-2">
-            <div className="h-3 md:h-4 w-full bg-[#E5E7EB] rounded" />
-            <div className="h-3 md:h-4 w-5/6 bg-[#E5E7EB] rounded" />
-            <div className="h-3 md:h-4 w-2/3 bg-[#E5E7EB] rounded" />
+            <div className="h-3 w-full bg-[#E5E7EB] rounded" />
+            <div className="h-3 w-5/6 bg-[#E5E7EB] rounded" />
+            <div className="h-3 w-2/3 bg-[#E5E7EB] rounded" />
           </div>
         </div>
       ))}
@@ -110,17 +111,13 @@ export default function ReviewsSection() {
   };
 
   return (
-    <section className="w-full px-3 md:px-6 lg:px-8">
-      <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
-        <div className="flex flex-col items-center justify-center gap-2 md:gap-3">
-          <h2
-            className="text-xl md:text-2xl lg:text-3xl font-bold bg-linear-to-r from-[#000087] to-[#000000] bg-[linear-gradient(118.41deg,#000087_1.2%,#000000_97.84%)] bg-clip-text text-transparent"
-          >
+    <section className="w-full px-3">
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <h2 className="text-xl font-bold bg-linear-to-r from-[#000087] to-[#000000] bg-[linear-gradient(118.41deg,#000087_1.2%,#000000_97.84%)] bg-clip-text text-transparent">
             {t('section5.title')}
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-[#374151] text-center max-w-2xl">
-            {t('section5.subtitle')}
-          </p>
+          <p className="text-base text-[#374151] text-center max-w-2xl">{t('section5.subtitle')}</p>
         </div>
 
         {isError && (
@@ -133,7 +130,7 @@ export default function ReviewsSection() {
           <ReviewsSkeleton />
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 gap-3">
               {allReviews.map((review) => {
                 const isExpanded = expandedIds.includes(review.id);
                 const fullContent = review.content_evaluate || '';
@@ -147,34 +144,47 @@ export default function ReviewsSection() {
                 return (
                   <div
                     key={review.id}
-                    className="bg-white rounded-xl md:rounded-2xl p-3 md:p-4 lg:p-6 flex flex-col gap-3 md:gap-4 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-[0px_10px_24px_0px_#00000012]"
+                    className="bg-white rounded-xl p-3 flex flex-col gap-3 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-[0px_10px_24px_0px_#00000012]"
                   >
-                    <div className="flex gap-3 md:gap-4">
-                      <Image
-                        src={review.client.avatar || "/picture5.png"}
-                        alt={review.client.fullname}
-                        width={1000}
-                        height={1000}
-                        className="size-[50px] md:size-[60px] lg:size-[70px] rounded-full border-2 border-[#3B82F6] object-cover shrink-0"
-                      />
-                      <div className="flex flex-col gap-0.5 md:gap-1">
-                        <h3 className="text-xl md:text-2xl font-extrabold text-[#555CF3]">
+                    <div className="flex gap-3">
+                      {review.client.avatar ? (
+                        <Image
+                          src={review.client.avatar}
+                          alt={review.client.fullname}
+                          width={1000}
+                          height={1000}
+                          className="size-[50px] rounded-full border-2 border-[#3B82F6] object-cover shrink-0"
+                        />
+                      ) : (
+                        <div
+                          className="flex size-[50px] shrink-0 items-center justify-center rounded-full border-2 border-white text-lg font-bold text-white"
+                          style={{ backgroundColor: 'rgb(236 72 153)' }}
+                          aria-hidden
+                        >
+                          {(review.client.fullname || '?').charAt(0).toUpperCase()}
+                        </div>
+                      )}
+                      <div className="flex flex-col gap-0.5">
+                        <h3 className="text-base font-extrabold text-[#555CF3]">
                           {review.client.fullname}
                         </h3>
                         {/* <p className="text-sm md:text-base text-[#6B7280] font-normal">
                           {review.client.address}
                         </p> */}
-                        <Image
-                          src="/stars.png"
-                          alt="star"
-                          width={1000}
-                          height={1000}
-                          className="w-24 md:w-28 lg:w-32 object-contain"
-                        />
+                        <div className="flex items-center gap-1.5">
+                          <Rating
+                            value={Number(review.evaluate) || 0}
+                            readOnly
+                            maxWidth={80}
+                          />
+                          <p className="text-xs text-[#525252] font-normal">
+                            {Number(review.evaluate).toFixed(1)}
+                          </p>
+                        </div>
                       </div>
                     </div>
 
-                    <p className="text-sm md:text-base lg:text-lg text-[#1F2937]">
+                    <p className="text-sm text-[#1F2937]">
                       {displayContent}
                       {shouldShowToggle && (
                         <button

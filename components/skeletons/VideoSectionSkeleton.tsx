@@ -6,21 +6,21 @@ interface VideoSectionSkeletonProps {
 
 export default function VideoSectionSkeleton({ }: VideoSectionSkeletonProps) {
     return (
-        <section className="w-full px-3 md:px-6 lg:px-8">
-            <div className="relative bg-linear-to-tr from-[#EF5EA2] via-[#F184B766] to-[#E869A4] rounded-[20px] md:rounded-[24px] p-1 md:p-1.5 shadow-[0px_8px_28px_0px_#7772935C]">
-                <div className="bg-white rounded-[18px] md:rounded-[22px] overflow-hidden relative">
+        <section className="w-full px-3">
+            <div className="relative bg-linear-to-tr from-[#EF5EA2] via-[#F184B766] to-[#E869A4] rounded-[20px] p-1 shadow-[0px_8px_28px_0px_#7772935C]">
+                <div className="bg-white rounded-[18px] overflow-hidden relative">
                     <div className="relative">
                         <div className="w-full aspect-video bg-gray-200 animate-pulse" />
                     </div>
 
-                    <div className="px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-5 flex flex-col gap-3 md:gap-4 mr-[20%]">
+                    <div className="px-4 py-3 flex flex-col gap-3 mr-[20%]">
                         <div className="flex items-center gap-1 md:gap-2">
-                            <div className="size-[18px] md:size-5 lg:size-6 rounded-full bg-gray-200 animate-pulse" />
-                            <div className="h-4 md:h-5 lg:h-6 w-40 md:w-56 lg:w-72 bg-gray-200 rounded animate-pulse" />
+                            <div className="size-[18px] rounded-full bg-gray-200 animate-pulse" />
+                            <div className="h-4 w-40 bg-gray-200 rounded animate-pulse" />
                         </div>
                         <div className="space-y-2">
-                            <div className="h-3 md:h-4 w-full bg-gray-200 rounded animate-pulse" />
-                            <div className="h-3 md:h-4 w-5/6 bg-gray-200 rounded animate-pulse" />
+                            <div className="h-3 w-full bg-gray-200 rounded animate-pulse" />
+                            <div className="h-3 w-5/6 bg-gray-200 rounded animate-pulse" />
                         </div>
                     </div>
                 </div>

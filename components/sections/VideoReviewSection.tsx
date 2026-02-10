@@ -60,13 +60,13 @@ export default function VideoReviewSection({ onDownloadApp }: VideoReviewSection
   return (
     <section className="w-full">
       <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
-        <div className="flex flex-col items-center justify-center gap-2 md:gap-3 px-3 md:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center gap-2 px-3">
           <h2
-            className="text-xl md:text-2xl lg:text-3xl font-bold bg-linear-to-r from-[#000087] to-[#000000] bg-[linear-gradient(118.41deg,#000087_1.2%,#000000_97.84%)] bg-clip-text text-transparent"
+            className="text-xl font-bold bg-linear-to-r from-[#000087] to-[#000000] bg-[linear-gradient(118.41deg,#000087_1.2%,#000000_97.84%)] bg-clip-text text-transparent"
           >
             {t('section3.title')}
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-[#374151] text-center max-w-2xl">{t('section3.subtitle')}</p>
+          <p className="text-base text-[#374151] text-center max-w-2xl">{t('section3.subtitle')}</p>
         </div>
 
         {/* Horizontal scroll container */}

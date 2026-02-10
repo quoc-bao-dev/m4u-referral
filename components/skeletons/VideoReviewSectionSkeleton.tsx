@@ -8,14 +8,14 @@ interface VideoReviewSectionSkeletonProps {
 
 export default function VideoReviewSectionSkeleton({ count = 5 }: VideoReviewSectionSkeletonProps) {
     return (
-        <div className="flex items-center gap-2 md:gap-4 lg:gap-6 h-full pl-2 md:pl-4 lg:pl-6 pr-2 md:pr-4 lg:pr-6">
+        <div className="flex items-center gap-2 h-full">
             {Array.from({ length: count }).map((_, index) => (
                 <div
                     key={`skeleton-${index}`}
                     className="flex-[0_0_auto] min-w-0 mx-auto md:mx-0"
                 >
-                    <div className="flex flex-col rounded-3xl bg-[#FEF0ED] overflow-hidden w-[280px] md:w-[320px] lg:w-[380px]">
-                        <div className="h-[342px] md:h-[450px] bg-gray-200 animate-pulse" />
+                    <div className="flex flex-col rounded-3xl bg-[#FEF0ED] overflow-hidden w-[280px]">
+                        <div className="h-[342px] bg-gray-200 animate-pulse" />
                         <div className="p-3 md:p-4 lg:p-5 flex gap-3 md:gap-4">
                             <div className="w-[60px] md:w-[70px] lg:w-[80px] h-[76px] md:h-[89px] lg:h-[101px] bg-gray-200 rounded animate-pulse shrink-0" />
                             <div className="flex flex-col gap-1 md:gap-2 flex-1">

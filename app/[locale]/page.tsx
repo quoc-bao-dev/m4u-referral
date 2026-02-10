@@ -101,13 +101,13 @@ export default function Home() {
   }, [urlParams.af_sub1, t]);
 
   return (
-    <div className="flex flex-col gap-4 min-h-screen overflow-x-hidden bg-[#F5F5F5] font-sans">
+    <div className="md:max-w-[470px] mx-auto flex flex-col gap-4 min-h-screen overflow-x-hidden bg-[#F5F5F5] font-sans">
       <Header
         referralCode={urlParams.af_sub1}
         onCopyCode={handleCopyCode}
         onDownloadApp={handleDownloadApp}
       />
-      <main className="flex flex-col  gap-6 md:gap-8 w-full  pb-6 max-w-7xl mx-auto">
+      <main className="flex flex-col  gap-6 w-full  pb-6 mx-auto">
         <LanguageSwitcher />
         <VideoSection />
         <BenefitsSection />

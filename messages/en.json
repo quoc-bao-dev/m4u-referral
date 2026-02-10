@@ -2,7 +2,7 @@
   "header": {
     "title": "Download app now to get 30% off voucher",
     "referralCode": "Referral code",
-    "downloadButton": "Download app now",
+    "downloadButton": "Download now",
     "copySuccess": "Referral code copied!",
     "copyError": "Failed to copy referral code!"
   },
